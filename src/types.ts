@@ -1,7 +1,10 @@
-export interface Character {
+interface Character {
+id: number
 name: string,
 picture: string,
 height: number,
 mass: number,
-creation: number,
+creationDate: number,
 }
+
+export default Character;
