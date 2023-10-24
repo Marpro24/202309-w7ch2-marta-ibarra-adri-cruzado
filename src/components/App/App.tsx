@@ -1,4 +1,3 @@
-import getCharacters from "../../data/getCharacters";
 
 
 
