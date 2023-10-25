@@ -2,7 +2,7 @@ import Character from "../../types";
 
 interface CharacterCardProps {
   character: Character;
-  picture: number;
+  picture: string;
 }
 
 const CharacterCard = ({
