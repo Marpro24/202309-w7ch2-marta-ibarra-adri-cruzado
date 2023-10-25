@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import Character from "../../types";
 import CharacterCard from "../CharacterCard/CharacterCard";
 
-interface CharacterData {
+interface CharacterProps {
   id: number;
-  count: number;
-  next: string;
-  previous: null;
-  results: Character[];
+  name: string;
+  height: number;
+  mass: number;
+  creationDate: number;
+  picture: number;
 }
 
 const CharacterList = (): React.ReactElement => {
@@ -15,20 +16,21 @@ const CharacterList = (): React.ReactElement => {
 
   useEffect(() => {
     const getCharacters = async () => {
-      const apiUrl = "https://swapi.dev/api/people/";
+      const apiUrl =
+        "https://starwars-characters-api-qcun.onrender.com/characters";
       const response = await fetch(apiUrl);
-      const characterPromise = (await response.json()) as CharacterData;
-      setList(characterPromise.results);
+      const characterPromise = (await response.json()) as CharacterProps[];
+      setList(characterPromise);
     };
     getCharacters();
   }, []);
   return (
     <div>
       <ul className="card__list">
-        {list.slice(0, 9).map(
+        {list.map(
           (character, position): React.ReactElement => (
             <li key={position}>
-              <CharacterCard character={character} picture={position + 1} />
+              <CharacterCard character={character} picture={0} />
             </li>
           ),
         )}
