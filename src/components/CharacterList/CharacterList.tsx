@@ -8,7 +8,7 @@ interface CharacterProps {
   height: number;
   mass: number;
   creationDate: number;
-  picture: number;
+  picture: string;
 }
 
 const CharacterList = (): React.ReactElement => {
@@ -19,18 +19,20 @@ const CharacterList = (): React.ReactElement => {
       const apiUrl =
         "https://starwars-characters-api-qcun.onrender.com/characters";
       const response = await fetch(apiUrl);
-      const characterPromise = (await response.json()) as CharacterProps[];
-      setList(characterPromise);
+      const characterData = (await response.json()) as CharacterProps[];
+      setList(characterData);
     };
+
     getCharacters();
   }, []);
+
   return (
     <div>
       <ul className="card__list">
         {list.map(
           (character, position): React.ReactElement => (
             <li key={position}>
-              <CharacterCard character={character} picture={0} />
+              <CharacterCard character={character} picture={""} />
             </li>
           ),
         )}
