@@ -4,6 +4,7 @@ interface Character {
   height: number;
   mass: number;
   creationDate: number;
+  picture: number;
 }
 
 export default Character;
