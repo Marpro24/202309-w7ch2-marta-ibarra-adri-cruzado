@@ -30,7 +30,19 @@ li {
   margin: 0;
 }
 
-.main-header {
+.main__header {
   display: flex;
   justify-content: center;
+}
+
+.card__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.character__data {
+  display: flex;
+  flex-direction: column;
 }

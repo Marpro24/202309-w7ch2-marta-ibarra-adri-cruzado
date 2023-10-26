@@ -14,9 +14,13 @@ const CharacterCard = ({
       <img
         src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
       />
-      <span className="character__height"> Height: {height}</span>
-      <span className="character__mass">Mass: {mass}</span>
-      <span className="character__creation">Creation Date:{creationDate}</span>
+      <div className="character__data">
+        <span className="character__height"> Height: {height}</span>
+        <span className="character__mass">Mass: {mass}</span>
+        <span className="character__creation">
+          Creation Date:{creationDate}
+        </span>
+      </div>
     </article>
   );
 };
