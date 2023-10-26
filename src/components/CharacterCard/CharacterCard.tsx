@@ -13,6 +13,9 @@ const CharacterCard = ({
       <h2 className="character__name">{name}</h2>
       <img
         className="character__image"
+        width="396"
+        height="496"
+        alt={`${name}`}
         src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
       />
       <div className="character__data">
